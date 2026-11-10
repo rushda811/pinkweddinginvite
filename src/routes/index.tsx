@@ -447,19 +447,30 @@ function Wishes() {
 
 function Footer() {
   return (
-    <footer className="px-4 pb-28 pt-4 text-center">
-      <Reveal>
-        <div className="plaque relative mx-auto w-[min(92vw,430px)] overflow-hidden rounded-md px-6 py-8">
-          <div className="pointer-events-none absolute inset-2 rounded-sm border border-gold/45" />
-          <div className="relative">
-            <p className="foil-text font-script text-5xl leading-none">A & R</p>
-            <div className="mx-auto my-4 h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent" />
-            <p className="font-serif text-[10px] uppercase tracking-[0.3em] text-gold-text">23 · 02 · 2027 — Riyadh</p>
-            <p className="mt-3 font-script text-2xl text-rose">With love, Abdullah &amp; Reem</p>
-          </div>
-        </div>
-      </Reveal>
-    </footer>
+
+<footer className="mt-24 sm:mt-32">
+  <Reveal>
+    <div className="mx-auto h-px w-48 rule-gold sm:w-72" />
+
+    <div className="mt-10 flex flex-col items-center text-center px-5">
+      <span className="font-serif text-xs font-bold uppercase tracking-[0.28em] text-gold-deep sm:text-sm">
+        Crafted by
+      </span>
+
+      <span
+        className="mt-3 font-script text-5xl leading-[1.15] text-gold sm:text-6xl"
+        style={{
+          animation: "gold-sheen 9s ease-in-out infinite",
+        }}
+      >
+        Aurelle Vows
+      </span>
+
+<span className="mt-3 font-serif text-xs font-semibold uppercase tracking-[0.2em] text-ink/80 sm:text-sm">        Bespoke Wedding Invitations
+      </span>
+    </div>
+  </Reveal>
+</footer>
   );
 }
 
