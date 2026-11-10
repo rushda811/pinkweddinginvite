@@ -447,9 +447,12 @@ function Wishes() {
 
 function Footer() {
   return (
-
-<footer className="mt-24 sm:mt-32">
-  <Reveal>
+    <footer className="px-4 pb-28 pt-4 text-center">
+      <Reveal>
+        <div className="plaque relative mx-auto w-[min(92vw,430px)] overflow-hidden rounded-md px-6 py-8">
+          <div className="pointer-events-none absolute inset-2 rounded-sm border border-gold/45" />
+          <div className="relative">
+           
     <div className="mx-auto h-px w-48 rule-gold sm:w-72" />
 
     <div className="mt-10 flex flex-col items-center text-center px-5">
@@ -469,8 +472,10 @@ function Footer() {
 <span className="mt-3 font-serif text-xs font-semibold uppercase tracking-[0.2em] text-ink/80 sm:text-sm">        Bespoke Wedding Invitations
       </span>
     </div>
-  </Reveal>
-</footer>
+          </div>
+        </div>
+      </Reveal>
+    </footer>
   );
 }
 
