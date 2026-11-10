@@ -55,8 +55,8 @@ function CreamCard({ children, flowers = true }: { children: ReactNode; flowers?
       <div className="pointer-events-none absolute inset-3.5 rounded-sm border border-gold/25" />
       {flowers && (
         <>
-          <img src={flower.url} alt="" className="sway pointer-events-none absolute -left-[18%] top-1/2 w-[28%] -translate-y-1/2 sm:-left-[13%] sm:w-[30%]" />
-          <img src={flower.url} alt="" className="sway-r pointer-events-none absolute -right-[18%] top-1/2 w-[28%] -translate-y-1/2 sm:-right-[13%] sm:w-[30%]" />
+          <img src={flower} alt="" className="sway pointer-events-none absolute -left-[18%] top-1/2 w-[28%] -translate-y-1/2 sm:-left-[13%] sm:w-[30%]" />
+          <img src={flower} alt="" className="sway-r pointer-events-none absolute -right-[18%] top-1/2 w-[28%] -translate-y-1/2 sm:-right-[13%] sm:w-[30%]" />
         </>
       )}
       <div className="relative">{children}</div>
@@ -124,7 +124,7 @@ function Hero() {
   return (
     <section className="hero-in relative flex min-h-[100svh] items-center justify-center px-4 py-10">
       <div className="relative w-[min(90vw,440px)]">
-        <img src={frame.url} alt="" className="w-full drop-shadow-2xl" />
+        <img src={frame} alt="" className="w-full drop-shadow-2xl" />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center sm:px-10">
           <p className="rise foil-text font-script text-4xl leading-none sm:text-6xl" style={{ animationDelay: "0.3s" }}>Save The Date</p>
           <div className="rise mt-5 h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent sm:mt-6 sm:w-28" style={{ animationDelay: "0.6s" }} />
@@ -370,7 +370,7 @@ function Schedule() {
     <section className="px-4 py-14 sm:py-16">
       <Reveal>
         <CreamCard>
-          <img src={bird.url} alt="" className="float-soft mx-auto mb-2 w-20 sm:w-24" />
+          <img src={bird} alt="" className="float-soft mx-auto mb-2 w-20 sm:w-24" />
           <Label>Wedding Day Schedule</Label>
           <div className="relative mt-8 text-left sm:mt-10">
             <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-gold to-transparent" />
@@ -421,7 +421,7 @@ function Wishes() {
     <section className="px-4 pb-16 pt-14 sm:pt-16">
       <Reveal>
         <CreamCard>
-          <img src={ring.url} alt="" className="float-soft mx-auto mb-2 w-20 sm:w-24" />
+          <img src={ring} alt="" className="float-soft mx-auto mb-2 w-20 sm:w-24" />
           <Label>Wishes Book</Label>
           <p className="mt-3 font-script text-3xl leading-none text-rose sm:text-4xl">Leave your blessings</p>
           <form onSubmit={submit} className="mt-6 space-y-3 text-left font-serif">
@@ -505,7 +505,7 @@ function Index() {
 
   return (
     <main className="relative min-h-[100svh] overflow-x-hidden">
-      <div className="pointer-events-none fixed inset-0" style={{ backgroundImage: `url(${tile.url})`, backgroundSize: "520px" }} />
+      <div className="pointer-events-none fixed inset-0" style={{ backgroundImage: `url(${tile})`, backgroundSize: "520px" }} />
       <div className="pointer-events-none fixed inset-0 bg-background/30" />
       <div className="pointer-events-none fixed inset-0" style={{ background: "radial-gradient(circle at 50% 40%, transparent 45%, var(--vignette) 100%)" }} />
 
@@ -523,8 +523,8 @@ function Index() {
             <div className="card-in relative aspect-[4/5.4] w-[min(92vw,420px)] overflow-hidden rounded-md bg-card shadow-luxe">
               <div className="absolute inset-2 rounded-sm border border-gold/50" />
               <div className="absolute inset-3.5 rounded-sm border border-gold/25" />
-              <img src={flower.url} alt="" className="sway pointer-events-none absolute -left-[20%] top-1/2 w-[30%] -translate-y-1/2" />
-              <img src={flower.url} alt="" className="sway-r pointer-events-none absolute -right-[20%] top-1/2 w-[30%] -translate-y-1/2" />
+              <img src={flower} alt="" className="sway pointer-events-none absolute -left-[20%] top-1/2 w-[30%] -translate-y-1/2" />
+              <img src={flower} alt="" className="sway-r pointer-events-none absolute -right-[20%] top-1/2 w-[30%] -translate-y-1/2" />
               <div className="relative flex h-full flex-col items-center justify-center px-6 text-center sm:px-16">
                 <p className="rise font-serif text-[10px] uppercase tracking-[0.25em] text-muted-foreground sm:text-[11px] sm:tracking-[0.35em]" style={{ animationDelay: ".6s" }}>Together with their families</p>
                 <h1 className="rise mt-4 font-script text-5xl leading-none text-rose sm:mt-5 sm:text-6xl" style={{ animationDelay: ".9s" }}>Sam</h1>
