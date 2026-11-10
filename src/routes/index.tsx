@@ -1,13 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { CalendarPlus, ChevronLeft, ChevronRight, MapPin, Pause, Play } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import tile from "@/assets/floral-tile.webp.asset.json";
-import flower from "@/assets/flower.webp.asset.json";
-import frame from "@/assets/hero-frame.webp.asset.json";
-import bell from "@/assets/bell.webp.asset.json";
-import bird from "@/assets/bird.webp.asset.json";
-import ring from "@/assets/ring.webp.asset.json";
+import tile from "@/assets/floral-tile.webp";
+import flower from "@/assets/flower.webp";
+import frame from "@/assets/hero-frame.webp";
+import bell from "@/assets/bell.webp";
+import bird from "@/assets/bird.webp";
+import ring from "@/assets/ring.webp";
 import music from "@/assets/wedding_music.mp3.asset.json";
 import gTable from "@/assets/gallery_table.jpg";
 import gBouquet from "@/assets/gallery_bouquet.jpg";
@@ -404,7 +403,7 @@ function Wishes() {
   const [err, setErr] = useState("");
 
   useEffect(() => {
-    supabase.from("wishes").select("*").order("created_at", { ascending: false }).limit(200).then(({ data }) => data && setWishes(data));
+    try { setWishes(JSON.parse(localStorage.getItem("wishes") || "[]")); } catch { /* ignore */ }
   }, []);
 
   const submit = async (e: React.FormEvent) => {
@@ -413,10 +412,9 @@ function Wishes() {
     if (!n || !m) return setErr("Please add your name and a wish.");
     if (n.length > 60 || m.length > 500) return setErr("That's a little long — please shorten it.");
     setBusy(true); setErr("");
-    const { data, error } = await supabase.from("wishes").insert({ name: n, message: m }).select().single();
+    const data: Wish = { id: crypto.randomUUID(), name: n, message: m, created_at: new Date().toISOString() };
     setBusy(false);
-    if (error) return setErr("Couldn't send your wish. Please try again.");
-    setWishes((w) => [data, ...w]); setName(""); setMessage("");
+    setWishes((w) => { const next = [data, ...w]; localStorage.setItem("wishes", JSON.stringify(next)); return next; }); setName(""); setMessage("");
   };
 
   return (
