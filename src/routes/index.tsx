@@ -381,7 +381,7 @@ function Schedule() {
                   <p className="mt-1 font-serif text-xs leading-snug text-muted-foreground sm:text-sm">{e}</p>
                 </div>
                 <div className={`flex ${i % 2 ? "order-1 justify-end" : "justify-start"}`}>
-                  <img src={img.url} alt="" className="h-12 w-12 object-contain sm:h-16 sm:w-16" />
+                  <img src={img} alt="" className="h-12 w-12 object-contain sm:h-16 sm:w-16" />
                 </div>
                 <span className="absolute left-1/2 top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full btn-gold sm:h-3 sm:w-3" />
               </Reveal>
